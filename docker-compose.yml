@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  heart-api:
+    # Build the image from the Dockerfile in the current directory
+    build: .
+    
+    # Map port 8000 on the host to port 8000 inside the container
+    ports:
+      - "8000:8000"
+    
+    # Set an environment variable for the model path inside the container
+    environment:
+      - MODEL_PATH=model/heart_model.joblib
+    
+    # Restart the container automatically if it crashes
+    restart: unless-stopped
