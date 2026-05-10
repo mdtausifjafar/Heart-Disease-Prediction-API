@@ -35,6 +35,18 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+@app.get("/", tags=["Root"])
+def read_root():
+    """
+    Root endpoint that provides a welcome message and links to the API documentation and health status.
+    """
+    return {
+        "message": "Welcome to the Heart Disease Prediction API",
+        "documentation": "/docs",
+        "health_check": "/health",
+        "model_info": "/info"
+    }
+
 @app.get("/health", tags=["Status"])
 def health_check():
     # Simple check to confirm the API is running and model is loaded
