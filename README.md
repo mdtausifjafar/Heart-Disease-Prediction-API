@@ -32,7 +32,7 @@ heart-disease-api/
 | Pipeline      | StandardScaler → RandomForestClassifier |
 | Dataset       | Heart Disease Dataset (1025 samples)     |
 | Features      | 13 clinical features                     |
-| Test Accuracy | 99%                                      |
+| Test Accuracy | 0.9902 (99.02%)                          |
 
 ---
 
@@ -92,7 +92,16 @@ docker-compose up
 
 Visit [http://localhost:8000/docs](http://localhost:8000/docs)
 
-### 5. Test with curl
+### 5. Interact with the API
+
+- Go to the **POST /predict** section.
+- Click the **"Try it out"** button.
+- You can now change the JSON input values as you wish.
+- Click the **"Execute"** button to see the model's prediction and confidence score.
+
+### 6. Example test with curl
+
+You can also test the API directly from your terminal:
 
 ```bash
 curl -X POST http://localhost:8000/predict \
@@ -109,7 +118,7 @@ Expected response:
 ```json
 {
   "heart_disease": false,
-  "confidence": 0.97,
+  "confidence": 0.9287,
   "message": "No heart disease detected. Stay healthy!"
 }
 ```
