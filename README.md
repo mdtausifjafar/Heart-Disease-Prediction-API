@@ -9,6 +9,7 @@ A FastAPI application that predicts the presence of heart disease using a Random
 ```
 heart-disease-api/
 ├── app/
+│   ├── __init__.py
 │   ├── main.py              # FastAPI routes and app logic
 │   └── schemas.py           # Pydantic input/output models
 ├── model/
